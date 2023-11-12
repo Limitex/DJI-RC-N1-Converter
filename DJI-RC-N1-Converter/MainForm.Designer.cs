@@ -28,10 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            SuspendLayout();
+            // 
+            // MainForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Text = "Form1";
+            Name = "MainForm";
+            Text = "DJI RC-N1 (RC231) Converter";
+            ResumeLayout(false);
         }
 
         #endregion
