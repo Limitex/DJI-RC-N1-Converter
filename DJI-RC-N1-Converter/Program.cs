@@ -14,7 +14,25 @@ namespace DJI_RC_N1_Converter
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             mainForm = new MainForm();
-            Application.Run();
+            using (var backgroundProgram = new BackgroundProgram())
+            {
+                backgroundProgram.ComPortConnected += (sender, portName) =>
+                {
+                    mainForm?.UpdateContextMenu(menu =>
+                    {
+                        menu.Items[0].Text = $"RC-N1 (RC231) is connected! ({portName})";
+                    });
+                };
+                backgroundProgram.ComPortDisconnected += (sender, portName) =>
+                {
+                    mainForm?.UpdateContextMenu(menu =>
+                    {
+                        menu.Items[0].Text = "Waiting for RC-N1 (RC231) connection...";
+                    });
+                };
+
+                Application.Run();
+            }
         }
     }
 }

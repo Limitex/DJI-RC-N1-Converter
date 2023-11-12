@@ -12,6 +12,18 @@ namespace DJI_RC_N1_Converter
         {
             Application.Exit();
         }
+
+        public void UpdateContextMenu(Action<ContextMenuStrip> action)
+        {
+            if (contextMenuStrip1.InvokeRequired)
+            {
+                contextMenuStrip1.Invoke(action, contextMenuStrip1);
+            }
+            else
+            {
+                action(contextMenuStrip1);
+            }
+        }
     }
 
     public class CustomToolStripRenderer : ToolStripProfessionalRenderer
