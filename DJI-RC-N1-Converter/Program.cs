@@ -2,6 +2,8 @@ namespace DJI_RC_N1_Converter
 {
     internal static class Program
     {
+        static MainForm? mainForm;
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -11,7 +13,8 @@ namespace DJI_RC_N1_Converter
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            mainForm = new MainForm();
+            Application.Run();
         }
     }
 }
