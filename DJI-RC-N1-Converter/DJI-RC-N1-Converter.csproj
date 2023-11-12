@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Nefarius.ViGEm.Client" Version="1.21.256" />
     <PackageReference Include="System.IO.Ports" Version="7.0.0" />
     <PackageReference Include="System.Management" Version="7.0.2" />
   </ItemGroup>
