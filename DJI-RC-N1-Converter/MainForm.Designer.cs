@@ -28,7 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            notifyIcon1 = new NotifyIcon(components);
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            TopToolStripMenuItem = new ToolStripMenuItem();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
+            // 
+            // notifyIcon1
+            // 
+            notifyIcon1.ContextMenuStrip = contextMenuStrip1;
+            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
+            notifyIcon1.Text = "notifyIcon1";
+            notifyIcon1.Visible = true;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { TopToolStripMenuItem, toolStripSeparator1, exitToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(181, 76);
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Text = "Exit";
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(177, 6);
+            // 
+            // TopToolStripMenuItem
+            // 
+            TopToolStripMenuItem.Name = "TopToolStripMenuItem";
+            TopToolStripMenuItem.Size = new Size(180, 22);
+            TopToolStripMenuItem.Text = "Progress";
             // 
             // MainForm
             // 
@@ -37,9 +75,16 @@
             ClientSize = new Size(800, 450);
             Name = "MainForm";
             Text = "DJI RC-N1 (RC231) Converter";
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
+
+        private NotifyIcon notifyIcon1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem TopToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }
