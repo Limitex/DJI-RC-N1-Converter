@@ -49,23 +49,24 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { TopToolStripMenuItem, toolStripSeparator1, exitToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 76);
+            contextMenuStrip1.Size = new Size(120, 54);
             // 
             // TopToolStripMenuItem
             // 
+            TopToolStripMenuItem.Enabled = false;
             TopToolStripMenuItem.Name = "TopToolStripMenuItem";
-            TopToolStripMenuItem.Size = new Size(180, 22);
+            TopToolStripMenuItem.Size = new Size(119, 22);
             TopToolStripMenuItem.Text = "Progress";
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(177, 6);
+            toolStripSeparator1.Size = new Size(116, 6);
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(119, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
