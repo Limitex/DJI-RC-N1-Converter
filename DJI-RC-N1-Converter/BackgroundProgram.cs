@@ -97,7 +97,12 @@ namespace DJI_RC_N1_Converter
                 serialPort.Write(new byte[0], 0, 0);
                 serialPort.Read(buffer, 0, 1);
             }
-            catch (Exception ex) when (ex is TimeoutException || ex is OperationCanceledException || ex is IOException || ex is InvalidOperationException)
+            catch (Exception ex) when (
+                ex is TimeoutException || 
+                ex is OperationCanceledException || 
+                ex is IOException || 
+                ex is InvalidOperationException ||
+                ex is UnauthorizedAccessException)
             {
                 Debug.WriteLine($"Timeout on {serialPort.PortName} port.");
                 Debug.WriteLine(ex);
