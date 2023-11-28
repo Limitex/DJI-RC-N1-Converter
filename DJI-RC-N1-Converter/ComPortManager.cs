@@ -45,7 +45,6 @@ namespace DJI_RC_N1_Converter
             string[] ports = SerialPort.GetPortNames();
             foreach (var port in ports)
                 ComPortAdded?.Invoke(this, port);
-            ComPortAdded?.Invoke(this, null);
         }
 
         private void ComAddEventArrived(object sender, EventArrivedEventArgs e)

@@ -49,10 +49,9 @@ namespace DJI_RC_N1_Converter
             {
                 if (portName != null && isConnect(portName))
                 {
-                    Debug.WriteLine(portName);
                     SerialPort serialPort = new SerialPort(portName, 115200);
                     serialPort.Open();
-                    Debug.WriteLine($"Connected to {serialPort.PortName} port.");
+                    Debug.WriteLine($"Successfully connected to {serialPort.PortName} port.");
 
                     client = new ViGEmClient();
                     controller = client.CreateXbox360Controller();
@@ -68,7 +67,7 @@ namespace DJI_RC_N1_Converter
                     {
                         Debug.WriteLine(ex);
                     }
-                    Debug.WriteLine($"Disconnected to {serialPort.PortName} port.");
+                    Debug.WriteLine($"Connection with {serialPort.PortName} port was lost.");
 
                     serialPort.Close();
                     serialPort.Dispose();
@@ -77,6 +76,10 @@ namespace DJI_RC_N1_Converter
                     client?.Dispose();
 
                     ComPortDisconnected?.Invoke(this, portName);
+                }
+                else
+                {
+                    Debug.WriteLine($"Failed to connect to {portName} port.");
                 }
             });
         }
